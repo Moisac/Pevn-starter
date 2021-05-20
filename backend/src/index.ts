@@ -17,7 +17,7 @@ app.get("/", (req, res) => {
 	res.send("Hello!");
 });
 
-app.use("/users", UsersRoutes);
-app.use("/posts", PostsRouters);
+app.use("/api/users", UsersRoutes);
+app.use("/api/posts", PostsRouters);
 
 app.listen(PORT, () => console.log(`REST API server ready at: http://localhost:${PORT}`));
