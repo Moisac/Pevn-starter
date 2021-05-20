@@ -33,7 +33,7 @@ export const getAllPosts = () => {
     const posts = ref(null)
     
     const load = async() => {
-        const { data } = await axios.get(`${production ? '/posts' : 'http://localhost:4000/posts'}`)
+        const { data } = await axios.get(`${production ? '/api/posts' : 'http://localhost:4000/api/posts'}`)
         posts.value = await data
     }
 
@@ -45,7 +45,7 @@ export const getSinglePost = () => {
     const { params: { id } } = useRoute()
 
     const load = async () => {
-        const { data } = await axios.get(`${production ? `/posts/${id}` : `http://localhost:4000/posts/${id}`}`)
+        const { data } = await axios.get(`${production ? `/api/posts/${id}` : `http://localhost:4000/api/posts/${id}`}`)
         post.value = await data
     }
 
@@ -59,7 +59,7 @@ export const getAllUsers = () => {
     const users = ref(null);
 
     const load = async () => {
-        const { data } = await axios.get(`${production ? '/users' : 'http://localhost:4000/users'}`)
+        const { data } = await axios.get(`${production ? '/api/users' : 'http://localhost:4000/api/users'}`)
         users.value = await data
     }
 
@@ -71,7 +71,7 @@ export const getSingleUser = () => {
     const { params: {id} } = useRoute();
 
     const load = async () => {
-        const { data } = await axios.get(`${production ? `/users/${id}` : `http://localhost:4000/users/${id}`}`)
+        const { data } = await axios.get(`${production ? `/api/users/${id}` : `http://localhost:4000/api/users/${id}`}`)
         user.value = await data
     }
 
